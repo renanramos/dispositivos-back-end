@@ -5,7 +5,6 @@ Aplicação back-end desenvolvida em NodeJS para persistência de informações 
 ## Ferramentas utilizadas
 
 * NodeJS v10.16.3
-* Angular CLI 8.3.0
 * MySQL 8.0.17
  
 Abaixo seguem pacotes/modulos utilizados para o desenvolvimento:
