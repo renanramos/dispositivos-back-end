@@ -28,10 +28,13 @@ const _updateDevice = `
 
 const _deleteDevice = `DELETE FROM ${schema}.${table} WHERE ${table}.${deviceId} = ?`;
 
+const _queryByModelo = `SELECT * FROM ${schema}.${table} WHERE ${deviceModelo} LIKE CONCAT('%', ? , '%')`;
+
 module.exports = {
     queryAllDevices: _queryAllDevices,
     queryDeviceById: _queryDeviceById,
     createDevice: _createDevice,
     updateDevice: _updateDevice,
-    deleteDevice: _deleteDevice
+    deleteDevice: _deleteDevice,
+    queryByModelo: _queryByModelo
 }

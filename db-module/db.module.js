@@ -44,10 +44,10 @@ const _createDevice = (device, callback) => {
         device.device_tamanho_tela, device.device_versao_so],
         (error, results, fields) => {
             if (error) console.log(error);
-            
+
             response = {
                 status: 201,
-                message: `Usuário incluído com sucesso.`
+                message: `Dispositivo incluído com sucesso.`
             }
             callback(response);
         });
@@ -72,7 +72,7 @@ const _updateDevice = (device, callback) => {
             if (results.affectedRows === 1) {
                 response = {
                     status: 200,
-                    message: `Usuário alterado com sucesso.`
+                    message: `Dispositivo alterado com sucesso.`
                 }
             } else {
                 response = {
@@ -98,7 +98,7 @@ const _deleteDevice = (id, callback) => {
         if (results.affectedRows === 1) {
             response = {
                 status: 200,
-                message: `Usuário excluído com sucesso`
+                message: `Dispositivo excluído com sucesso`
             }
         } else {
             response = {
@@ -111,10 +111,20 @@ const _deleteDevice = (id, callback) => {
     conn.end();
 };
 
+const _getDeviceByModelo = (modelo, callback) => {
+    let conn = _getConnection();        
+    conn.query(sql.queryByModelo, modelo, (error, results, fields) => {
+        if (error) throw error;
+        callback(results);
+    });
+    conn.end();
+}
+
 module.exports = {
     getAllDevices: _getDevices,
     getDeviceById: _getDeviceById,
     createDevice: _createDevice,
     updateDevice: _updateDevice,
-    deleteDevice: _deleteDevice
+    deleteDevice: _deleteDevice,
+    getDeviceByModelo: _getDeviceByModelo
 }
