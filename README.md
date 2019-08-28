@@ -31,7 +31,7 @@ e os campos necessários para o correto funcionamento, utilize o script abaixo.
       PRIMARY KEY (`device_id`),
       UNIQUE INDEX `device_id_UNIQUE` (`device_id` ASC) VISIBLE);
 
-        ### DDL
+        ### DML
         INSERT INTO `db`.`device` (`device_id`, `device_modelo`, `device_fabricante`, `device_capacidade_armazenamento`, `device_tamanho_tela`, `device_versao_so`)
          VALUES(1, 'Moto G1', 'Motorola', 1, 1, '1.0.1');
          INSERT INTO `db`.`device` (`device_id`, `device_modelo`, `device_fabricante`, `device_capacidade_armazenamento`, `device_tamanho_tela`, `device_versao_so`)
