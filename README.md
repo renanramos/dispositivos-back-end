@@ -55,6 +55,8 @@ Abra a pasta do projeto através do `cmd` ou pela `IDE` e instale as dependênci
 
 ```npm i ``` ou ```npm install```.
 
+> Importante: lembre-se verificar/alterar as informações registradas no arquivo `.env` 
+
 Depois de instaladas as dependências, execute o projeto com `npm start`. Após a inicialização, o server irá ativar um 
 serviço em **localhost:5000** . 
 
