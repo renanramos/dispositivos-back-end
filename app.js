@@ -8,10 +8,15 @@ const devicesRoutes = require('./api/routes/devices');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static(__dirname + '/public'));
 
 app.use(cors());
 
 app.use('/devices', devicesRoutes);
+
+app.get('*', (req, res) => {
+    res.sendFile(__dirname + '/dist/index.html');
+})
 
 app.use((req, res, next) => {
     const error = new Error('Not found');
