@@ -11,11 +11,10 @@ routes.get('/', (req, res, next) => {
 
 routes.post('/', (req, res, next) => {
     let device = req.body;
-
     if (!req.body) console.log('Error');
 
     mod.createDevice(device, (response) => {
-        res.status(204).json(response);
+        res.status(201).json(response);
     });    
 });
 
